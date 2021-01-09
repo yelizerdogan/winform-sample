@@ -1,0 +1,560 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3048AE23-7AF1-4695-A4C1-DB63A1471008}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BeamDeflection.UI.WinForm</RootNamespace>
+    <AssemblyName>BeamDeflection.UI.WinForm</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\UserControls\Admin\Beams\ucEditBeams.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Beams\ucEditBeams.Designer.cs">
+      <DependentUpon>ucEditBeams.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Beams\ucGetBeams.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Beams\ucGetBeams.Designer.cs">
+      <DependentUpon>ucGetBeams.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Beams\ucInsertBeam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Beams\ucInsertBeam.Designer.cs">
+      <DependentUpon>ucInsertBeam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Calculations\ucEditCalculations.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Calculations\ucEditCalculations.Designer.cs">
+      <DependentUpon>ucEditCalculations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Loads\ucEditLoads.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Loads\ucEditLoads.Designer.cs">
+      <DependentUpon>ucEditLoads.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Loads\ucGetLoads.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Loads\ucGetLoads.Designer.cs">
+      <DependentUpon>ucGetLoads.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Loads\ucInsertLoad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Loads\ucInsertLoad.Designer.cs">
+      <DependentUpon>ucInsertLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Roles\ucEditRoles.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Roles\ucEditRoles.Designer.cs">
+      <DependentUpon>ucEditRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Roles\ucGetRoles.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Roles\ucGetRoles.Designer.cs">
+      <DependentUpon>ucGetRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Roles\ucInsertRole.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Roles\ucInsertRole.Designer.cs">
+      <DependentUpon>ucInsertRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Units\ucEditUnits.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Units\ucEditUnits.Designer.cs">
+      <DependentUpon>ucEditUnits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Units\ucGetUnits.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Units\ucGetUnits.Designer.cs">
+      <DependentUpon>ucGetUnits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Units\ucInsertUnit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Units\ucInsertUnit.Designer.cs">
+      <DependentUpon>ucInsertUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Calculations\ucGetCalculations.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Calculations\ucGetCalculations.Designer.cs">
+      <DependentUpon>ucGetCalculations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Users\ucEditUsers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Users\ucEditUsers.Designer.cs">
+      <DependentUpon>ucEditUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Users\ucGetUsers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Users\ucGetUsers.Designer.cs">
+      <DependentUpon>ucGetUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Users\ucInsertUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Users\ucInsertUser.Designer.cs">
+      <DependentUpon>ucInsertUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Variables\ucEditVariables.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Variables\ucEditVariables.Designer.cs">
+      <DependentUpon>ucEditVariables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Variables\ucGetVariables.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Admin\Variables\ucGetVariables.Designer.cs">
+      <DependentUpon>ucGetVariables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Calculation\Loads\ucCalEndLoad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Calculation\Loads\ucCalEndLoad.Designer.cs">
+      <DependentUpon>ucCalEndLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Calculation\Loads\ucCalLoadAtAnyPoint.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Calculation\Loads\ucCalLoadAtAnyPoint.Designer.cs">
+      <DependentUpon>ucCalLoadAtAnyPoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Calculation\Loads\ucCalLoadAtAnyPointSecond.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Calculation\Loads\ucCalLoadAtAnyPointSecond.Designer.cs">
+      <DependentUpon>ucCalLoadAtAnyPointSecond.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Calculation\Loads\ucCalMidspanLoad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Calculation\Loads\ucCalMidspanLoad.Designer.cs">
+      <DependentUpon>ucCalMidspanLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Calculation\Loads\ucCalMomentLoadAtEnd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Calculation\Loads\ucCalMomentLoadAtEnd.Designer.cs">
+      <DependentUpon>ucCalMomentLoadAtEnd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Calculation\Loads\ucCalMomentLoadAtOneSupport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Calculation\Loads\ucCalMomentLoadAtOneSupport.Designer.cs">
+      <DependentUpon>ucCalMomentLoadAtOneSupport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Calculation\Loads\ucCalTriangularLoad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Calculation\Loads\ucCalTriangularLoad.Designer.cs">
+      <DependentUpon>ucCalTriangularLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Calculation\Loads\ucCalUniformLoad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Calculation\Loads\ucCalUniformLoad.Designer.cs">
+      <DependentUpon>ucCalUniformLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Calculation\Loads\ucCalUniformLoadSecond.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Calculation\Loads\ucCalUniformLoadSecond.Designer.cs">
+      <DependentUpon>ucCalUniformLoadSecond.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Calculation\Loads\ucCalUniformlyVaring.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Calculation\Loads\ucCalUniformlyVaring.Designer.cs">
+      <DependentUpon>ucCalUniformlyVaring.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Calculation\Loads\ucCalUniformlyVaringLoadFirstCase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Calculation\Loads\ucCalUniformlyVaringLoadFirstCase.Designer.cs">
+      <DependentUpon>ucCalUniformlyVaringLoadFirstCase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Calculation\Loads\ucCalUniformlyVaringLoadSecondCase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Calculation\Loads\ucCalUniformlyVaringLoadSecondCase.Designer.cs">
+      <DependentUpon>ucCalUniformlyVaringLoadSecondCase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Formula\ucEndLoad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Formula\ucEndLoad.Designer.cs">
+      <DependentUpon>ucEndLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Formula\ucLoadAtAnyPoint.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Formula\ucLoadAtAnyPoint.Designer.cs">
+      <DependentUpon>ucLoadAtAnyPoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Formula\ucLoadAtAnyPointSecond.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Formula\ucLoadAtAnyPointSecond.Designer.cs">
+      <DependentUpon>ucLoadAtAnyPointSecond.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Formula\ucMidspanLoad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Formula\ucMidspanLoad.Designer.cs">
+      <DependentUpon>ucMidspanLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Formula\ucMomentLoadAtEnd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Formula\ucMomentLoadAtEnd.Designer.cs">
+      <DependentUpon>ucMomentLoadAtEnd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Formula\ucMomentLoadAtOneSupport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Formula\ucMomentLoadAtOneSupport.Designer.cs">
+      <DependentUpon>ucMomentLoadAtOneSupport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Formula\ucTriangularLoad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Formula\ucTriangularLoad.Designer.cs">
+      <DependentUpon>ucTriangularLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Formula\ucUniformLoad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Formula\ucUniformLoad.Designer.cs">
+      <DependentUpon>ucUniformLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Formula\ucUniformLoadSecond.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Formula\ucUniformLoadSecond.Designer.cs">
+      <DependentUpon>ucUniformLoadSecond.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Formula\ucUniformlyVaring.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Formula\ucUniformlyVaring.Designer.cs">
+      <DependentUpon>ucUniformlyVaring.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Formula\ucUniformlyVaringLoadFirstCase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Formula\ucUniformlyVaringLoadFirstCase.Designer.cs">
+      <DependentUpon>ucUniformlyVaringLoadFirstCase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControls\Formula\ucUniformlyVaringLoadSecondCase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControls\Formula\ucUniformlyVaringLoadSecondCase.Designer.cs">
+      <DependentUpon>ucUniformlyVaringLoadSecondCase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DefaultConfiguration\DefaultConfigurations.cs" />
+    <Compile Include="Forms\MainForms\FrmAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForms\FrmAdmin.Designer.cs">
+      <DependentUpon>FrmAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForms\FrmCalculation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForms\FrmCalculation.Designer.cs">
+      <DependentUpon>FrmCalculation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForms\FrmFormulas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForms\FrmFormulas.Designer.cs">
+      <DependentUpon>FrmFormulas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserForms\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserForms\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserForms\FrmRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserForms\FrmRegister.Designer.cs">
+      <DependentUpon>FrmRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulas\Calculate.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\UserControls\Admin\Beams\ucEditBeams.resx">
+      <DependentUpon>ucEditBeams.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Admin\Beams\ucGetBeams.resx">
+      <DependentUpon>ucGetBeams.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Admin\Beams\ucInsertBeam.resx">
+      <DependentUpon>ucInsertBeam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Admin\Calculations\ucEditCalculations.resx">
+      <DependentUpon>ucEditCalculations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Admin\Loads\ucEditLoads.resx">
+      <DependentUpon>ucEditLoads.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Admin\Loads\ucGetLoads.resx">
+      <DependentUpon>ucGetLoads.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Admin\Loads\ucInsertLoad.resx">
+      <DependentUpon>ucInsertLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Admin\Roles\ucEditRoles.resx">
+      <DependentUpon>ucEditRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Admin\Roles\ucGetRoles.resx">
+      <DependentUpon>ucGetRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Admin\Roles\ucInsertRole.resx">
+      <DependentUpon>ucInsertRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Admin\Units\ucEditUnits.resx">
+      <DependentUpon>ucEditUnits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Admin\Units\ucGetUnits.resx">
+      <DependentUpon>ucGetUnits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Admin\Units\ucInsertUnit.resx">
+      <DependentUpon>ucInsertUnit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Admin\Calculations\ucGetCalculations.resx">
+      <DependentUpon>ucGetCalculations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Admin\Users\ucEditUsers.resx">
+      <DependentUpon>ucEditUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Admin\Users\ucGetUsers.resx">
+      <DependentUpon>ucGetUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Admin\Users\ucInsertUser.resx">
+      <DependentUpon>ucInsertUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Admin\Variables\ucEditVariables.resx">
+      <DependentUpon>ucEditVariables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Admin\Variables\ucGetVariables.resx">
+      <DependentUpon>ucGetVariables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Calculation\Loads\ucCalEndLoad.resx">
+      <DependentUpon>ucCalEndLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Calculation\Loads\ucCalLoadAtAnyPoint.resx">
+      <DependentUpon>ucCalLoadAtAnyPoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Calculation\Loads\ucCalLoadAtAnyPointSecond.resx">
+      <DependentUpon>ucCalLoadAtAnyPointSecond.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Calculation\Loads\ucCalMidspanLoad.resx">
+      <DependentUpon>ucCalMidspanLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Calculation\Loads\ucCalMomentLoadAtEnd.resx">
+      <DependentUpon>ucCalMomentLoadAtEnd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Calculation\Loads\ucCalMomentLoadAtOneSupport.resx">
+      <DependentUpon>ucCalMomentLoadAtOneSupport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Calculation\Loads\ucCalTriangularLoad.resx">
+      <DependentUpon>ucCalTriangularLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Calculation\Loads\ucCalUniformLoad.resx">
+      <DependentUpon>ucCalUniformLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Calculation\Loads\ucCalUniformLoadSecond.resx">
+      <DependentUpon>ucCalUniformLoadSecond.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Calculation\Loads\ucCalUniformlyVaring.resx">
+      <DependentUpon>ucCalUniformlyVaring.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Calculation\Loads\ucCalUniformlyVaringLoadFirstCase.resx">
+      <DependentUpon>ucCalUniformlyVaringLoadFirstCase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Calculation\Loads\ucCalUniformlyVaringLoadSecondCase.resx">
+      <DependentUpon>ucCalUniformlyVaringLoadSecondCase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Formula\ucEndLoad.resx">
+      <DependentUpon>ucEndLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Formula\ucLoadAtAnyPoint.resx">
+      <DependentUpon>ucLoadAtAnyPoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Formula\ucLoadAtAnyPointSecond.resx">
+      <DependentUpon>ucLoadAtAnyPointSecond.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Formula\ucMidspanLoad.resx">
+      <DependentUpon>ucMidspanLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Formula\ucMomentLoadAtEnd.resx">
+      <DependentUpon>ucMomentLoadAtEnd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Formula\ucMomentLoadAtOneSupport.resx">
+      <DependentUpon>ucMomentLoadAtOneSupport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Formula\ucTriangularLoad.resx">
+      <DependentUpon>ucTriangularLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Formula\ucUniformLoad.resx">
+      <DependentUpon>ucUniformLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Formula\ucUniformLoadSecond.resx">
+      <DependentUpon>ucUniformLoadSecond.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Formula\ucUniformlyVaring.resx">
+      <DependentUpon>ucUniformlyVaring.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Formula\ucUniformlyVaringLoadFirstCase.resx">
+      <DependentUpon>ucUniformlyVaringLoadFirstCase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControls\Formula\ucUniformlyVaringLoadSecondCase.resx">
+      <DependentUpon>ucUniformlyVaringLoadSecondCase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForms\FrmAdmin.resx">
+      <DependentUpon>FrmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForms\FrmCalculation.resx">
+      <DependentUpon>FrmCalculation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForms\FrmFormulas.resx">
+      <DependentUpon>FrmFormulas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserForms\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserForms\FrmRegister.resx">
+      <DependentUpon>FrmRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\Images\10uniformlyvaringloadfirstcase.png" />
+    <Content Include="Resources\Images\11uniformlyvaringloadsecondcase.png" />
+    <Content Include="Resources\Images\12momentloadatend.png" />
+    <Content Include="Resources\Images\1midspan.png" />
+    <Content Include="Resources\Images\2looadatanypoint.png" />
+    <Content Include="Resources\Images\3uniform.png" />
+    <Content Include="Resources\Images\4uniformlyvaring.png" />
+    <Content Include="Resources\Images\5triangularload.png" />
+    <Content Include="Resources\Images\6momentloadatonesupport.png" />
+    <Content Include="Resources\Images\7endload.png" />
+    <Content Include="Resources\Images\8loadatanypoint.png" />
+    <Content Include="Resources\Images\9uniformload.png" />
+    <Content Include="Resources\Images\cantilever_beam_deflection_formulas.png" />
+    <Content Include="Resources\Images\sdu_logo.jpg" />
+    <Content Include="Resources\Images\simply_supported_beam_deflection_formulas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BeamDeflection.Basecore\BeamDeflection.Basecore.csproj">
+      <Project>{084ae604-6246-4ecd-8e01-bfcda71eca6c}</Project>
+      <Name>BeamDeflection.Basecore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BeamDeflection.Datacore\BeamDeflection.Datacore.csproj">
+      <Project>{9b1e1543-0779-4bf7-9780-15a9bd3399eb}</Project>
+      <Name>BeamDeflection.Datacore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BeamDeflection.Domain\BeamDeflection.Domain.csproj">
+      <Project>{1a017a6d-c5ca-4ac1-8978-08099aeafeb0}</Project>
+      <Name>BeamDeflection.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
